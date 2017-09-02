@@ -1,7 +1,7 @@
 <?php
 	
 	//your email here
-	$to_email = 'williansugiyama@gmail.com';
+	$to_email = 'stiflerbycleber@gmail.com';
 	
 	//subject of email you will receive
 	$subject = 'Contato Portfolio';	

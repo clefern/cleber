@@ -172,7 +172,7 @@ $(document).ready(function () {
             scaleColor: '#c6c6c6',
             scaleLength: 8,
             lineWidth: 8,
-            size: 150,
+            size: 130,
             lineCap: 'butt'
         });
 
