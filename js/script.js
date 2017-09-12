@@ -5,7 +5,7 @@
 
 $(window).load(function () {
     $('#preloader').delay(350).fadeOut('slow', function () {
-        $('.profile-page, .resume-page, .contact-page').hide();
+        $('.profile-page, .resume-page, .portfolio-page, .contact-page').hide();
     });
 });
 
@@ -16,7 +16,6 @@ $(document).ready(function () {
     /*  ---------------------
          Homepage Responsive
         ---------------------  */
-    
 
     function homepageResponsive() {
 
@@ -71,7 +70,7 @@ $(document).ready(function () {
          Menu Settings
         --------------  */
 
-    // Hide Menu
+    // Esconder Menu
 
     $('.menu > div').on('click', function () {
 
@@ -79,8 +78,10 @@ $(document).ready(function () {
             menuWidth = $('.menu').width();
 
         $('.introduction').animate({
+            // menos indica que ira para a esquerda a introduction
             left: '-' + introWidth
         }, 1000, 'easeOutQuart');
+
         $('.menu').animate({
             left: menuWidth
         }, 1000, 'easeOutQuart', function () {
@@ -91,7 +92,7 @@ $(document).ready(function () {
 
     });
 
-    // Show Reletive Page Onclick
+    // Mostrar paginas relativas ao click
 
     $('.menu div.profile-btn').on('click', function () {
         $('.profile-page').fadeIn(1200);
@@ -115,6 +116,7 @@ $(document).ready(function () {
         $('.home-page').css({
             visibility: 'visible'
         });
+        // uma unica função para voltar a posição inicial
         $('.introduction, .menu').animate({
             left: 0
         }, 1000, 'easeOutQuart');
@@ -164,15 +166,15 @@ $(document).ready(function () {
 
         var fillColor = $('.footer').css('background-color'); // Get background color of footer to set relevent fill color in pie charts
 
-        // Initiate EasyPieChart
+        // Inicializa EasyPieChart grafico visual das skills
 
         $('.skill').easyPieChart({
             barColor: fillColor,
             trackColor: '#c6c6c6',
             scaleColor: '#c6c6c6',
-            scaleLength: 8,
-            lineWidth: 8,
-            size: 130,
+            scaleLength: 6,
+            lineWidth: 6,
+            size: 110,
             lineCap: 'butt'
         });
 
@@ -245,8 +247,4 @@ $(document).ready(function () {
         });
         return false;
     });
-
-    /*  -------------------------------
-         Google Map ( for contact page )
-        -------------------------------  */
 });
