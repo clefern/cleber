@@ -1,4 +1,14 @@
+                    /*-----------------------------------
+                       1 ) Estilos Gerais
+                      -----------------------------------*/
 
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
 
                     /*-----------------------------------
                        1 ) Font Import From Google Fonts
@@ -645,6 +655,7 @@ body {
     position: relative;
     margin-bottom: 5px;
 }
+
 
 .education-container .bullet {
     background: #9fc715;
