@@ -2,7 +2,6 @@
   "name": "portfolio-master",
   "version": "1.0.0",
   "description": "automatizando gulp no portfolio",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gulp": "gulp"
