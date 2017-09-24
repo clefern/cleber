@@ -5,7 +5,7 @@
 	// limpa diretorios
 	clean = require('gulp-clean'),
 	// concatena um conjunto de arquivos
-	concat = require('gulp-concat'),
+	// concat = require('gulp-concat'),
 	// replace html não sendo usada
 	// htmlReplace = require('gulp-html-replace'),
 	// uglify minifica os arquivos css e js
@@ -13,7 +13,9 @@
 
 	usemin = require('gulp-usemin'),
 
-	cssmin = require('gulp-cssmin');
+	cssmin = require('gulp-cssmin'),
+
+	browserSync = require('browser-sync');
 
 	//tarefa padrão
 	gulp.task('default',['copy'],function(){
@@ -47,10 +49,19 @@
 
 	gulp.task('usemin',function(){
 		gulp.src('src/*.html')
-				.pipe(usemin({
+				.pipe(usemin({ // pega todos os builds em comments html e change to 
 					'js' : [uglify],
 					'css' : [cssmin]
 				}))
 				.pipe(gulp.dest('dist'));
+	});
+
+	gulp.task('server', function(){
+		browserSync.init({
+			server: {
+				baseDir: 'src'
+			}
+		});
+		gulp.watch('src/**/*').on('change',browserSync.reload);
 	});
 
