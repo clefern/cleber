@@ -55,13 +55,18 @@
 				}))
 				.pipe(gulp.dest('dist'));
 	});
-
+	//inicia um servidor
 	gulp.task('server', function(){
+
 		browserSync.init({
 			server: {
+				// o servidor inicia na pasta src
 				baseDir: 'src'
+				// a opcao abaixo é usado caso haja um servidor diferente
+				//proxy: "localhost:3000"
 			}
 		});
+		// não usa abertura de metodo no reload
 		gulp.watch('src/**/*').on('change',browserSync.reload);
 	});
 
