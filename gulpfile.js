@@ -48,6 +48,8 @@
 			.pipe(gulp.dest('dist/fonts'));
 		gulp.src('src/library/**/*')
 			.pipe(gulp.dest('dist/library'));
+		gulp.src('src/php/**/*')
+			.pipe(gulp.dest('dist/php'));
 		done();
 	}));
 
