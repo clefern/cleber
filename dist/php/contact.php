@@ -26,7 +26,7 @@
     // email header
 
 	$headers = "From: ".$name." <".$email.">\r\nReply-To: ".$email."";
-
+	print_r($error);
 	if (!$error){
 		
 		// sending email
