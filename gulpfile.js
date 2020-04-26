@@ -16,45 +16,47 @@
 	cssmin = require('gulp-cssmin'),
 
 	browserSync = require('browser-sync');
-
-	//tarefa padrão
-	gulp.task('default',['copy'],function(){
-		//como nehuma das tarefas abaixo não retorna nada, elas serão executadas assincrono - AO MESMO TEMPO
-		gulp.start('build-img','usemin');
-	});
 	// limpa a pasta onde as imagens otimizadas seram salvas
 	gulp.task('clean', function(){
-		return gulp.src('dist')
-				.pipe(clean());
+		return gulp.src('dist').pipe(clean());
+	});
+	//otimiza as imagens originais de src para dist(distribuição)
+	gulp.task('build-img', function(done){
+		// salva a otimização criando uma nova pasta images
+		gulp.src('src/images/**/*')
+			//processa todas as imagens acima e otimiza
+			.pipe( imagemin() )
+			//salva conteudo
+			.pipe( gulp.dest('dist/images') );
+		done();
+	});
+
+	// copia html e minifica css e js
+	gulp.task('usemin',function(done){
+		gulp.src('src/*.html')
+			.pipe(usemin({ // pega todos os builds em comments html e change to 
+				'js' : [uglify],
+				'css' : [cssmin]
+			}))
+			.pipe(gulp.dest('dist'));
+		done();
 	});
 
 	//copia arquivos que não estão relacionados com otimização
-	gulp.task('copy',['clean'], function(){
+	gulp.task('copy', gulp.series('build-img','usemin', function(done){
 		gulp.src('src/library/font-awesome/fonts/*')
-						.pipe(gulp.dest('dist/fonts'));
-		return gulp.src('src/library/**/*')
-				.pipe(gulp.dest('dist/library'));
-	});
+			.pipe(gulp.dest('dist/fonts'));
+		gulp.src('src/library/**/*')
+			.pipe(gulp.dest('dist/library'));
+		done();
+	}));
 
-	//otimiza as imagens originais de src para dist(distribuição)
-	gulp.task('build-img', function(){
+	//tarefa padrão
+	gulp.task('default', gulp.series('clean','copy',function(done){
+		//como nehuma das tarefas abaixo não retorna nada, elas serão executadas assincrono - AO MESMO TEMPO
+		done();
+	}));
 
-		// salva a otimização criando uma nova pasta images
-		gulp.src('src/images/**/*')
-				//processa todas as imagens acima e otimiza
-				.pipe( imagemin() )
-				//salva conteudo
-				.pipe( gulp.dest('dist/images') );
-	});
-
-	gulp.task('usemin',function(){
-		gulp.src('src/*.html')
-				.pipe(usemin({ // pega todos os builds em comments html e change to 
-					'js' : [uglify],
-					'css' : [cssmin]
-				}))
-				.pipe(gulp.dest('dist'));
-	});
 	//inicia um servidor
 	gulp.task('server', function(){
 
