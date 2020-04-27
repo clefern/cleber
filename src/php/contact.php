@@ -26,21 +26,20 @@
     // email header
 
 	$headers = "From: ".$name." <".$email.">\r\nReply-To: ".$email."";
-	// print_r($error);
-	echo $error; // error message
-	// if (!$error){
+	
+	if (!$error){
 		
-	// 	// sending email
-	// 	$sent = mail($to_email,$subject,$message,$headers); 
+		// sending email
+		$sent = mail($to_email,$subject,$message,$headers); 
 		
-	// 	if ($sent) {
-	// 			// if message sent successfully
-	// 			echo "SEND"; 
-	// 		} else {
-	// 			// error message
-	// 			echo $sending_error; 
-	// 		}
-	// } else {
-	// 	echo $error; // error message
-	// }
+		if ($sent) {
+				// if message sent successfully
+				echo "SEND"; 
+			} else {
+				// error message
+				echo $sending_error; 
+			}
+	} else {
+		echo $error; // error message
+	}
 ?>
