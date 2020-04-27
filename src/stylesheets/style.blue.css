@@ -519,6 +519,8 @@ body {
 
 .story, .contato, .portfolio, .education, .skills, .contact-details {
     background: linear-gradient(to right, #e3cbef, #cdcbef);
+}
+.story, .contato, .portfolio, .contact-details {
     min-height: 95vh;
 }
 .portfolio {
