@@ -7,9 +7,9 @@
 	$subject = 'Contato Portfolio';	
 	
 	//Error Messages
-	$invalid_name = 'Insira seu nome';
-	$invalid_email = 'Insira um e-mail valido';
-	$invalid_message = 'Insira sua mensagem';
-	$sending_error = 'Desculpa, não conseguimos enviar seu e-mail';
+	$invalid_name = 'Insira seu nome ';
+	$invalid_email = 'Insira um e-mail valido ';
+	$invalid_message = 'Insira sua mensagem ';
+	$sending_error = 'Seu e-mail não foi enviado';
 
 ?>
