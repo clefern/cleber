@@ -55,7 +55,8 @@
     }
 
     .education-container:before,
-    .experience-container:before {
+    .experience-container:before,
+    .education-container-child:before {
         display: none;
     }
 

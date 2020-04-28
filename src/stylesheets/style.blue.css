@@ -505,9 +505,9 @@ body {
     background: #f5f5f5;
 }
 
-                    /*------------------
-                       7 ) Profile Page
-                      ------------------*/
+/*------------------
+7 ) Profile Page
+------------------*/
 
 /* ( a ) Story of Glory */
 
@@ -517,7 +517,7 @@ body {
     background-position: bottom;
 }
 
-.story, .contato, .portfolio, .education, .skills, .contact-details {
+.story, .contato, .portfolio, .education, .skills, .contact-details, .experience {
     background: linear-gradient(to right, #e3cbef, #cdcbef);
 }
 .story, .contato, .portfolio, .contact-details {
@@ -654,6 +654,23 @@ body {
     width: 2px;
 }
 
+.education-container-child {
+    position: relative;
+    margin-bottom: 50px;
+    margin-top: 25px;
+}
+
+
+.education-container-child:before {
+    background: #9fc715;
+    content: "";
+    height: 96%;
+    left: 35px;
+    position: absolute;
+    top: 2%;
+    width: 2px;
+}
+
 .item {
     position: relative;
     margin-bottom: 5px;
@@ -682,6 +699,13 @@ body {
     padding: 0 15px;
     margin-left: 15px;
     width: 88%;
+}
+
+.education-content-child {
+    display: inline-block;
+    padding: 0 0 0 15px;
+    margin-left: 15px;
+    width: 91.5%;
 }
 
 .education-content h3 {
