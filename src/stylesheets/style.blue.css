@@ -520,10 +520,8 @@ body {
 .story, .contato, .portfolio, .education, .skills, .contact-details, .experience {
     background: linear-gradient(to right, #e3cbef, #cdcbef);
 }
-.story, .contato, .portfolio, .contact-details {
+.story, .portfolio {
     min-height: 95vh;
-}
-.portfolio {
 }
 
 .story-content {
@@ -644,6 +642,11 @@ body {
     margin-top: 25px;
 }
 
+.education-container-child {
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
 .education-container:before {
     background: #9fc715;
     content: "";
@@ -654,28 +657,16 @@ body {
     width: 2px;
 }
 
-.education-container-child {
-    position: relative;
-    margin-bottom: 50px;
-    margin-top: 25px;
-}
-
-
 .education-container-child:before {
-    background: #9fc715;
-    content: "";
-    height: 96%;
+    background: #bbb;
     left: 35px;
-    position: absolute;
-    top: 2%;
-    width: 2px;
 }
 
 .item {
     position: relative;
     margin-bottom: 5px;
+    display: flex;
 }
-
 
 .education-container .bullet {
     background: #9fc715;
@@ -694,18 +685,14 @@ body {
     vertical-align: top;
 }
 
-.education-content {
-    display: inline-block;
-    padding: 0 15px;
-    margin-left: 15px;
-    width: 88%;
+.education-container-child .bullet {
+    background: #bbb;
 }
 
-.education-content-child {
+.education-content {
     display: inline-block;
-    padding: 0 0 0 15px;
-    margin-left: 15px;
-    width: 91.5%;
+    margin-left: 36px;
+    flex: 1;
 }
 
 .education-content h3 {
@@ -728,12 +715,23 @@ body {
     top: 5px;
 }
 
+.education-content-child h3 {
+    background: #bbb;
+}
+
+.education-content-child h3:before {
+    border-color: transparent #bbb transparent transparent;
+}
+
 .education-content h3 span {
     font-size: 16px;
+    margin-left: 10px;
 }
 
 .education-content p {
     padding: 15px 5px;
+    font-size: 1.2em;
+    line-height: 25px;
 }
 
 /* ( b ) Experience Section */

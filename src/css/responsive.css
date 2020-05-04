@@ -59,11 +59,18 @@
     .education-container-child:before {
         display: none;
     }
+    .education-container-child {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 
     .education-content,
     .experience-content {
-        width: 100%;
         margin-left: 0;
+    }
+
+    .education-content-child {
+        margin-left: 30px;
     }
 
     .education-content h3,
